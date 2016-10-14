@@ -10,11 +10,11 @@ class TestBasics(unittest.TestCase):
 		result = rpn.calculate("5 3 -")
 		self.assertEqual(2, result)
 	def test_multiply(self):
-		result = rpn.calculate("5 3 *")
-		self.assertEqual(15, result)
+		result = rpn.calculate("2 3 *")
+		self.assertEqual(6, result)
 	def test_divide(self):
-		result = rpn.calculate("6 3 /")
-		self.assertEqual(2, result)
-	def test_badstring(self):
+		result = rpn.calculate("6 2 /")
+		self.assertEqual(3, result)
+	def test_toomanythings(self):
 		with self.assertRaises(TypeError):
 			rpn.calculate("1 2 3 +")
